@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/pa1.dir/bufferpool_test.cpp.o CMakeFiles/pa1.dir/database_test.cpp.o -o pa1  ../../src/db/libdb.a ../../lib/libgtest_main.a ../../lib/libgtest.a 

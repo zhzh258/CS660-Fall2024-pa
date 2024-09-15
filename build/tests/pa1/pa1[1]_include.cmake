@@ -1,0 +1,5 @@
+if(EXISTS "/home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1/pa1[1]_tests.cmake")
+  include("/home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1/pa1[1]_tests.cmake")
+else()
+  add_test(pa1_NOT_BUILT pa1_NOT_BUILT)
+endif()

@@ -1,0 +1,569 @@
+Start testing: Sep 09 13:38 EDT
+----------------------------------------------------------
+1/15 Testing: BufferPoolTest.getPage
+1/15 Test: BufferPoolTest.getPage
+Command: "/home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1/pa1" "--gtest_filter=BufferPoolTest.getPage" "--gtest_also_run_disabled_tests"
+Directory: /home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1
+"BufferPoolTest.getPage" start time: Sep 09 13:38 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/nonox/cs660/CS660-Fall2024-pa/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BufferPoolTest.getPage
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BufferPoolTest
+[ RUN      ] BufferPoolTest.getPage
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/bufferpool_test.cpp:23: Failure
+Expected equality of these values:
+  reads.size()
+    Which is: 244214828
+  db::DEFAULT_NUM_PAGES
+    Which is: 50
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"BufferPoolTest.getPage" end time: Sep 09 13:38 EDT
+"BufferPoolTest.getPage" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/15 Testing: BufferPoolTest.getPageMultipleFiles
+2/15 Test: BufferPoolTest.getPageMultipleFiles
+Command: "/home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1/pa1" "--gtest_filter=BufferPoolTest.getPageMultipleFiles" "--gtest_also_run_disabled_tests"
+Directory: /home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1
+"BufferPoolTest.getPageMultipleFiles" start time: Sep 09 13:38 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/nonox/cs660/CS660-Fall2024-pa/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BufferPoolTest.getPageMultipleFiles
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BufferPoolTest
+[ RUN      ] BufferPoolTest.getPageMultipleFiles
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/bufferpool_test.cpp:53: Failure
+Expected equality of these values:
+  reads.size()
+    Which is: 0
+  1
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"BufferPoolTest.getPageMultipleFiles" end time: Sep 09 13:38 EDT
+"BufferPoolTest.getPageMultipleFiles" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/15 Testing: BufferPoolTest.eviction
+3/15 Test: BufferPoolTest.eviction
+Command: "/home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1/pa1" "--gtest_filter=BufferPoolTest.eviction" "--gtest_also_run_disabled_tests"
+Directory: /home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1
+"BufferPoolTest.eviction" start time: Sep 09 13:38 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/nonox/cs660/CS660-Fall2024-pa/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BufferPoolTest.eviction
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BufferPoolTest
+[ RUN      ] BufferPoolTest.eviction
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/bufferpool_test.cpp:81: Failure
+Expected equality of these values:
+  reads.size()
+    Which is: 244214828
+  db::DEFAULT_NUM_PAGES + 1
+    Which is: 51
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"BufferPoolTest.eviction" end time: Sep 09 13:38 EDT
+"BufferPoolTest.eviction" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/15 Testing: BufferPoolTest.markDirty
+4/15 Test: BufferPoolTest.markDirty
+Command: "/home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1/pa1" "--gtest_filter=BufferPoolTest.markDirty" "--gtest_also_run_disabled_tests"
+Directory: /home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1
+"BufferPoolTest.markDirty" start time: Sep 09 13:38 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/nonox/cs660/CS660-Fall2024-pa/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BufferPoolTest.markDirty
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BufferPoolTest
+[ RUN      ] BufferPoolTest.markDirty
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/bufferpool_test.cpp:113: Failure
+Expected equality of these values:
+  reads.size()
+    Which is: 244214828
+  db::DEFAULT_NUM_PAGES
+    Which is: 50
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"BufferPoolTest.markDirty" end time: Sep 09 13:38 EDT
+"BufferPoolTest.markDirty" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/15 Testing: BufferPoolTest.flushPage
+5/15 Test: BufferPoolTest.flushPage
+Command: "/home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1/pa1" "--gtest_filter=BufferPoolTest.flushPage" "--gtest_also_run_disabled_tests"
+Directory: /home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1
+"BufferPoolTest.flushPage" start time: Sep 09 13:38 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/nonox/cs660/CS660-Fall2024-pa/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BufferPoolTest.flushPage
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BufferPoolTest
+[ RUN      ] BufferPoolTest.flushPage
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/bufferpool_test.cpp:139: Failure
+Expected equality of these values:
+  reads.size()
+    Which is: 244214828
+  1
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"BufferPoolTest.flushPage" end time: Sep 09 13:38 EDT
+"BufferPoolTest.flushPage" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/15 Testing: BufferPoolTest.discardPage
+6/15 Test: BufferPoolTest.discardPage
+Command: "/home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1/pa1" "--gtest_filter=BufferPoolTest.discardPage" "--gtest_also_run_disabled_tests"
+Directory: /home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1
+"BufferPoolTest.discardPage" start time: Sep 09 13:38 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/nonox/cs660/CS660-Fall2024-pa/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BufferPoolTest.discardPage
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BufferPoolTest
+[ RUN      ] BufferPoolTest.discardPage
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/bufferpool_test.cpp:158: Failure
+Expected: bufferPool.isDirty(pid) throws an exception.
+  Actual: it doesn't.
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/bufferpool_test.cpp:163: Failure
+Expected equality of these values:
+  reads.size()
+    Which is: 244214828
+  1
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"BufferPoolTest.discardPage" end time: Sep 09 13:38 EDT
+"BufferPoolTest.discardPage" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/15 Testing: BufferPoolTest.LRU
+7/15 Test: BufferPoolTest.LRU
+Command: "/home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1/pa1" "--gtest_filter=BufferPoolTest.LRU" "--gtest_also_run_disabled_tests"
+Directory: /home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1
+"BufferPoolTest.LRU" start time: Sep 09 13:38 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/nonox/cs660/CS660-Fall2024-pa/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BufferPoolTest.LRU
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BufferPoolTest
+[ RUN      ] BufferPoolTest.LRU
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/bufferpool_test.cpp:224: Failure
+Expected equality of these values:
+  reads.size()
+    Which is: 244214828
+  db::DEFAULT_NUM_PAGES + size
+    Which is: 60
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/bufferpool_test.cpp:225: Failure
+Expected equality of these values:
+  writes.size()
+    Which is: 0
+  size
+    Which is: 10
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/bufferpool_test.cpp:231: Failure
+Expected equality of these values:
+  reads.size()
+    Which is: 244214828
+  db::DEFAULT_NUM_PAGES + size + size
+    Which is: 70
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/bufferpool_test.cpp:232: Failure
+Expected equality of these values:
+  writes.size()
+    Which is: 0
+  size + size
+    Which is: 20
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"BufferPoolTest.LRU" end time: Sep 09 13:38 EDT
+"BufferPoolTest.LRU" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/15 Testing: BefferPoolTest.flushFile
+8/15 Test: BefferPoolTest.flushFile
+Command: "/home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1/pa1" "--gtest_filter=BefferPoolTest.flushFile" "--gtest_also_run_disabled_tests"
+Directory: /home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1
+"BefferPoolTest.flushFile" start time: Sep 09 13:38 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/nonox/cs660/CS660-Fall2024-pa/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BefferPoolTest.flushFile
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BefferPoolTest
+[ RUN      ] BefferPoolTest.flushFile
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/bufferpool_test.cpp:192: Failure
+Expected equality of these values:
+  reads.size()
+    Which is: 244214828
+  size
+    Which is: 10
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/bufferpool_test.cpp:193: Failure
+Expected equality of these values:
+  writes.size()
+    Which is: 0
+  size / 2
+    Which is: 5
+[  FAILED  ] BefferPoolTest.flushFile (0 ms)
+[----------] 1 test from BefferPoolTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] BefferPoolTest.flushFile
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"BefferPoolTest.flushFile" end time: Sep 09 13:38 EDT
+"BefferPoolTest.flushFile" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/15 Testing: DatabaseTest.AddDbFile
+9/15 Test: DatabaseTest.AddDbFile
+Command: "/home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1/pa1" "--gtest_filter=DatabaseTest.AddDbFile" "--gtest_also_run_disabled_tests"
+Directory: /home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1
+"DatabaseTest.AddDbFile" start time: Sep 09 13:38 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/nonox/cs660/CS660-Fall2024-pa/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = DatabaseTest.AddDbFile
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DatabaseTest
+[ RUN      ] DatabaseTest.AddDbFile
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:13: Failure
+Expected equality of these values:
+  expected
+    Which is: 0x563c3d97e4f0
+  &actual
+    Which is: 0x563c3c4a1360
+[  FAILED  ] DatabaseTest.AddDbFile (0 ms)
+[----------] 1 test from DatabaseTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] DatabaseTest.AddDbFile
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"DatabaseTest.AddDbFile" end time: Sep 09 13:38 EDT
+"DatabaseTest.AddDbFile" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/15 Testing: DatabaseTest.AddDbFileTwice
+10/15 Test: DatabaseTest.AddDbFileTwice
+Command: "/home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1/pa1" "--gtest_filter=DatabaseTest.AddDbFileTwice" "--gtest_also_run_disabled_tests"
+Directory: /home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1
+"DatabaseTest.AddDbFileTwice" start time: Sep 09 13:38 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/nonox/cs660/CS660-Fall2024-pa/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = DatabaseTest.AddDbFileTwice
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DatabaseTest
+[ RUN      ] DatabaseTest.AddDbFileTwice
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:20: Failure
+Expected: db.add(std::make_unique<db::DbFile>(name)) throws an exception.
+  Actual: it doesn't.
+[  FAILED  ] DatabaseTest.AddDbFileTwice (0 ms)
+[----------] 1 test from DatabaseTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] DatabaseTest.AddDbFileTwice
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"DatabaseTest.AddDbFileTwice" end time: Sep 09 13:38 EDT
+"DatabaseTest.AddDbFileTwice" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/15 Testing: DatabaseTest.AddMultipleDbFiles
+11/15 Test: DatabaseTest.AddMultipleDbFiles
+Command: "/home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1/pa1" "--gtest_filter=DatabaseTest.AddMultipleDbFiles" "--gtest_also_run_disabled_tests"
+Directory: /home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1
+"DatabaseTest.AddMultipleDbFiles" start time: Sep 09 13:38 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/nonox/cs660/CS660-Fall2024-pa/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = DatabaseTest.AddMultipleDbFiles
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DatabaseTest
+[ RUN      ] DatabaseTest.AddMultipleDbFiles
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:34: Failure
+Expected equality of these values:
+  &actual1
+    Which is: 0x55a541eb5360
+  expected1
+    Which is: 0x55a541f89490
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:36: Failure
+Expected equality of these values:
+  &actual2
+    Which is: 0x55a541eb5360
+  expected2
+    Which is: 0x55a541f894f0
+[  FAILED  ] DatabaseTest.AddMultipleDbFiles (0 ms)
+[----------] 1 test from DatabaseTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] DatabaseTest.AddMultipleDbFiles
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"DatabaseTest.AddMultipleDbFiles" end time: Sep 09 13:38 EDT
+"DatabaseTest.AddMultipleDbFiles" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/15 Testing: DatabaseTest.GetNonexistentDbFile
+12/15 Test: DatabaseTest.GetNonexistentDbFile
+Command: "/home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1/pa1" "--gtest_filter=DatabaseTest.GetNonexistentDbFile" "--gtest_also_run_disabled_tests"
+Directory: /home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1
+"DatabaseTest.GetNonexistentDbFile" start time: Sep 09 13:38 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/nonox/cs660/CS660-Fall2024-pa/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = DatabaseTest.GetNonexistentDbFile
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DatabaseTest
+[ RUN      ] DatabaseTest.GetNonexistentDbFile
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:42: Failure
+Expected: db.get(name) throws an exception.
+  Actual: it doesn't.
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:44: Failure
+Expected: db.get(name) throws an exception.
+  Actual: it doesn't.
+[  FAILED  ] DatabaseTest.GetNonexistentDbFile (0 ms)
+[----------] 1 test from DatabaseTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] DatabaseTest.GetNonexistentDbFile
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"DatabaseTest.GetNonexistentDbFile" end time: Sep 09 13:38 EDT
+"DatabaseTest.GetNonexistentDbFile" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/15 Testing: DatabaseTest.RemoveDbFile
+13/15 Test: DatabaseTest.RemoveDbFile
+Command: "/home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1/pa1" "--gtest_filter=DatabaseTest.RemoveDbFile" "--gtest_also_run_disabled_tests"
+Directory: /home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1
+"DatabaseTest.RemoveDbFile" start time: Sep 09 13:38 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/nonox/cs660/CS660-Fall2024-pa/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = DatabaseTest.RemoveDbFile
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DatabaseTest
+[ RUN      ] DatabaseTest.RemoveDbFile
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:54: Failure
+Expected equality of these values:
+  expected
+    Which is: 0x559100b404f0
+  actual.get()
+    Which is: 0x559100b41790
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:55: Failure
+Expected: db.get(name) throws an exception.
+  Actual: it doesn't.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"DatabaseTest.RemoveDbFile" end time: Sep 09 13:38 EDT
+"DatabaseTest.RemoveDbFile" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/15 Testing: DatabaseTest.RemoveNonexistentDbFile
+14/15 Test: DatabaseTest.RemoveNonexistentDbFile
+Command: "/home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1/pa1" "--gtest_filter=DatabaseTest.RemoveNonexistentDbFile" "--gtest_also_run_disabled_tests"
+Directory: /home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1
+"DatabaseTest.RemoveNonexistentDbFile" start time: Sep 09 13:38 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/nonox/cs660/CS660-Fall2024-pa/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = DatabaseTest.RemoveNonexistentDbFile
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DatabaseTest
+[ RUN      ] DatabaseTest.RemoveNonexistentDbFile
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"DatabaseTest.RemoveNonexistentDbFile" end time: Sep 09 13:38 EDT
+"DatabaseTest.RemoveNonexistentDbFile" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/15 Testing: DatabaseTest.MultipleOperations
+15/15 Test: DatabaseTest.MultipleOperations
+Command: "/home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1/pa1" "--gtest_filter=DatabaseTest.MultipleOperations" "--gtest_also_run_disabled_tests"
+Directory: /home/nonox/cs660/CS660-Fall2024-pa/build/tests/pa1
+"DatabaseTest.MultipleOperations" start time: Sep 09 13:38 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/nonox/cs660/CS660-Fall2024-pa/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = DatabaseTest.MultipleOperations
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DatabaseTest
+[ RUN      ] DatabaseTest.MultipleOperations
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:77: Failure
+Expected equality of these values:
+  expected
+    Which is: 0x564d99963490
+  &actual
+    Which is: 0x564d97ff4360
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:77: Failure
+Expected equality of these values:
+  expected
+    Which is: 0x564d99963490
+  &actual
+    Which is: 0x564d97ff4360
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:77: Failure
+Expected equality of these values:
+  expected
+    Which is: 0x564d99963490
+  &actual
+    Which is: 0x564d97ff4360
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:77: Failure
+Expected equality of these values:
+  expected
+    Which is: 0x564d99963490
+  &actual
+    Which is: 0x564d97ff4360
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:77: Failure
+Expected equality of these values:
+  expected
+    Which is: 0x564d99963490
+  &actual
+    Which is: 0x564d97ff4360
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:77: Failure
+Expected equality of these values:
+  expected
+    Which is: 0x564d99963490
+  &actual
+    Which is: 0x564d97ff4360
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:77: Failure
+Expected equality of these values:
+  expected
+    Which is: 0x564d99963490
+  &actual
+    Which is: 0x564d97ff4360
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:77: Failure
+Expected equality of these values:
+  expected
+    Which is: 0x564d99963490
+  &actual
+    Which is: 0x564d97ff4360
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:77: Failure
+Expected equality of these values:
+  expected
+    Which is: 0x564d99963490
+  &actual
+    Which is: 0x564d97ff4360
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:77: Failure
+Expected equality of these values:
+  expected
+    Which is: 0x564d99963490
+  &actual
+    Which is: 0x564d97ff4360
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:81: Failure
+Expected: db.add(std::make_unique<db::DbFile>(name)) throws an exception.
+  Actual: it doesn't.
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:81: Failure
+Expected: db.add(std::make_unique<db::DbFile>(name)) throws an exception.
+  Actual: it doesn't.
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:81: Failure
+Expected: db.add(std::make_unique<db::DbFile>(name)) throws an exception.
+  Actual: it doesn't.
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:81: Failure
+Expected: db.add(std::make_unique<db::DbFile>(name)) throws an exception.
+  Actual: it doesn't.
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:81: Failure
+Expected: db.add(std::make_unique<db::DbFile>(name)) throws an exception.
+  Actual: it doesn't.
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:81: Failure
+Expected: db.add(std::make_unique<db::DbFile>(name)) throws an exception.
+  Actual: it doesn't.
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:81: Failure
+Expected: db.add(std::make_unique<db::DbFile>(name)) throws an exception.
+  Actual: it doesn't.
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:81: Failure
+Expected: db.add(std::make_unique<db::DbFile>(name)) throws an exception.
+  Actual: it doesn't.
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:81: Failure
+Expected: db.add(std::make_unique<db::DbFile>(name)) throws an exception.
+  Actual: it doesn't.
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:81: Failure
+Expected: db.add(std::make_unique<db::DbFile>(name)) throws an exception.
+  Actual: it doesn't.
+/home/nonox/cs660/CS660-Fall2024-pa/tests/pa1/database_test.cpp:94: Failure
+Expected: db.get(name1) throws an exception.
+  Actual: it doesn't.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"DatabaseTest.MultipleOperations" end time: Sep 09 13:38 EDT
+"DatabaseTest.MultipleOperations" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 09 13:38 EDT
