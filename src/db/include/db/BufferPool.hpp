@@ -3,8 +3,8 @@
 #include <db/types.hpp>
 #include <list>
 #include <unordered_map>
-#include <unordered_set>
 #include <vector>
+#include <memory>
 
 namespace db {
 constexpr size_t DEFAULT_NUM_PAGES = 50;
@@ -17,6 +17,12 @@ constexpr size_t DEFAULT_NUM_PAGES = 50;
  */
 class BufferPool {
   // TODO pa1: add private members
+private:
+  std::list<PageId> lru_queue;
+  std::unordered_map<const PageId, std::list<PageId>::iterator> lru_hashing;
+  std::unordered_map<const PageId, bool> lru_is_dirty;
+  std::unordered_map<const PageId, std::unique_ptr<Page>> lru_page_mapping;
+
 
 public:
   /**

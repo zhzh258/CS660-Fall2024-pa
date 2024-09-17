@@ -3,6 +3,7 @@
 #include <db/BufferPool.hpp>
 #include <db/DbFile.hpp>
 #include <memory>
+#include <unordered_map>
 
 /**
  * @brief A database is a collection of files and a BufferPool.
@@ -14,6 +15,7 @@
 namespace db {
 class Database {
   // TODO pa1: add private members
+  std::unordered_map<std::string, std::unique_ptr<DbFile>> catalog; // pa1_solution: This is a mapping from the file name to the DbFile object.
   
   BufferPool bufferPool;
 
@@ -24,7 +26,7 @@ public:
 
   Database(Database const &) = delete;
   void operator=(Database const &) = delete;
-  Database(Database &&) = delete;
+  Database(Database &&) = delete; 
   void operator=(Database &&) = delete;
 
   /**

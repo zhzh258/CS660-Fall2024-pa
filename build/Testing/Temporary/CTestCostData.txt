@@ -1,31 +1,16 @@
-BufferPoolTest.getPage 0 0
-BufferPoolTest.getPageMultipleFiles 0 0
-BufferPoolTest.eviction 0 0
-BufferPoolTest.markDirty 0 0
-BufferPoolTest.flushPage 0 0
-BufferPoolTest.discardPage 0 0
-BufferPoolTest.LRU 0 0
-BefferPoolTest.flushFile 0 0
-DatabaseTest.AddDbFile 0 0
-DatabaseTest.AddDbFileTwice 0 0
-DatabaseTest.AddMultipleDbFiles 0 0
-DatabaseTest.GetNonexistentDbFile 0 0
-DatabaseTest.RemoveDbFile 0 0
-DatabaseTest.RemoveNonexistentDbFile 0 0
-DatabaseTest.MultipleOperations 0 0
+BufferPoolTest.getPage 10 0.000227083
+BufferPoolTest.getPageMultipleFiles 10 0.000230334
+BufferPoolTest.eviction 6 0.000321517
+BufferPoolTest.markDirty 8 0.000272981
+BufferPoolTest.flushPage 2 0.000911114
+BufferPoolTest.discardPage 12 0.000186972
+BufferPoolTest.LRU 6 0.000406762
+BefferPoolTest.flushFile 2 0.000999787
+DatabaseTest.AddDbFile 20 8.0674e-05
+DatabaseTest.AddDbFileTwice 20 0.000115489
+DatabaseTest.AddMultipleDbFiles 20 0.000104374
+DatabaseTest.GetNonexistentDbFile 20 9.13027e-05
+DatabaseTest.RemoveDbFile 3 0.000527901
+DatabaseTest.RemoveNonexistentDbFile 20 7.42087e-05
+DatabaseTest.MultipleOperations 3 0.000600215
 ---
-BufferPoolTest.getPage
-BufferPoolTest.getPageMultipleFiles
-BufferPoolTest.eviction
-BufferPoolTest.markDirty
-BufferPoolTest.flushPage
-BufferPoolTest.discardPage
-BufferPoolTest.LRU
-BefferPoolTest.flushFile
-DatabaseTest.AddDbFile
-DatabaseTest.AddDbFileTwice
-DatabaseTest.AddMultipleDbFiles
-DatabaseTest.GetNonexistentDbFile
-DatabaseTest.RemoveDbFile
-DatabaseTest.RemoveNonexistentDbFile
-DatabaseTest.MultipleOperations

@@ -307,6 +307,5 @@ tests/pa1/CMakeFiles/pa1.dir/database_test.cpp.o: \
  /home/nonox/cs660/CS660-Fall2024-pa/src/db/include/db/BufferPool.hpp \
  /home/nonox/cs660/CS660-Fall2024-pa/src/db/include/db/types.hpp \
  /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
- /usr/include/c++/11/bits/list.tcc /usr/include/c++/11/unordered_set \
- /usr/include/c++/11/bits/unordered_set.h \
+ /usr/include/c++/11/bits/list.tcc \
  /home/nonox/cs660/CS660-Fall2024-pa/src/db/include/db/DbFile.hpp

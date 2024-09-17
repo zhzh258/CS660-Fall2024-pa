@@ -1,0 +1,4 @@
+/build
+/cmake-build-debug
+/src/cmake-build-debug
+/src/db/cmake-build-debug

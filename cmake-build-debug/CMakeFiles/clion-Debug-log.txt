@@ -1,0 +1,35 @@
+"C:\Program Files\JetBrains\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.2.1/bin/ninja/win/x64/ninja.exe" -G Ninja -S \\wsl.localhost\ubuntu\home\nonox\cs660\CS660-Fall2024-pa -B \\wsl.localhost\ubuntu\home\nonox\cs660\CS660-Fall2024-pa\cmake-build-debug
+-- The CXX compiler identification is unknown
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - failed
+-- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2024.2.1/bin/mingw/bin/g++.exe
+-- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2024.2.1/bin/mingw/bin/g++.exe - broken
+CMake Error at C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:73 (message):
+  The C++ compiler
+
+    "C:/Program Files/JetBrains/CLion 2024.2.1/bin/mingw/bin/g++.exe"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: '//wsl.localhost/ubuntu/home/nonox/cs660/CS660-Fall2024-pa/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-0ss5cu'
+    
+    Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.2.1/bin/ninja/win/x64/ninja.exe" -v cmTC_7ca50
+    [1/2] C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE    -o CMakeFiles\cmTC_7ca50.dir\testCXXCompiler.cxx.obj -c \\wsl.localhost\ubuntu\home\nonox\cs660\CS660-Fall2024-pa\cmake-build-debug\CMakeFiles\CMakeScratch\TryCompile-0ss5cu\testCXXCompiler.cxx
+    FAILED: CMakeFiles/cmTC_7ca50.dir/testCXXCompiler.cxx.obj 
+    C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE    -o CMakeFiles\cmTC_7ca50.dir\testCXXCompiler.cxx.obj -c \\wsl.localhost\ubuntu\home\nonox\cs660\CS660-Fall2024-pa\cmake-build-debug\CMakeFiles\CMakeScratch\TryCompile-0ss5cu\testCXXCompiler.cxx
+    Assembler messages:
+    Fatal error: can't create CMakeFiles\cmTC_7ca50.dir\testCXXCompiler.cxx.obj: Invalid argument
+    ninja: build stopped: subcommand failed.
+    
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+-- Configuring incomplete, errors occurred!
