@@ -1,8 +1,9 @@
 #pragma once
 
 #include <db/types.hpp>
-#include <unordered_map>
+#include <unordered_set>
 #include <vector>
+#include <numeric>
 
 namespace db {
 class TupleDesc;
@@ -19,6 +20,8 @@ public:
 
 class TupleDesc {
   // TODO pa2: add private members
+  std::vector<type_t> types;
+  std::vector<std::string> names;
 
 public:
   TupleDesc() = default;
