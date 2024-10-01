@@ -29,11 +29,11 @@ TupleDesc::TupleDesc(const std::vector<type_t> &types, const std::vector<std::st
 {
   // TODO pa2: implement
   if (types.size() != names.size()) {
-    throw std::logic_error("TupleDesc::TupleDesc() - types and names must have the same size!");
+    throw std::invalid_argument("TupleDesc::TupleDesc() - types and names must have the same size!");
   }
   std::unordered_set<std::string> names_set(names.begin(), names.end());
   if (names_set.size() != names.size()) {
-    throw std::logic_error("TupleDesc::TupleDesc() - names must be unique!");
+    throw std::invalid_argument("TupleDesc::TupleDesc() - names must be unique!");
   }
   this->types = types;
   this->names = names;
@@ -60,7 +60,7 @@ size_t TupleDesc::index_of(const std::string &name) const {
   // TODO pa2: implement
   auto iter = std::find(this->names.begin(), this->names.end(), name);
   if (iter == this->names.end()) { // Not found
-    throw std::logic_error("TupleDesc::index_of - name not found in TupleDesc!");
+    throw std::invalid_argument("TupleDesc::index_of - name not found in TupleDesc!");
   } else {
     return std::distance(this->names.begin(), iter);
   }
@@ -68,17 +68,20 @@ size_t TupleDesc::index_of(const std::string &name) const {
 
 size_t TupleDesc::offset_of(const size_t &index) const {
   // TODO pa2: implement
+  if (index > this->types.size() - 1) {
+    throw std::invalid_argument("TupleDesc::offset_of() - index out of range!");
+  }
 
   // Calculate the offset needed
   return std::accumulate(this->types.begin(), this->types.begin() + index, (size_t)0, [](size_t acc, type_t type) {
     switch (type)
     {
     case type_t::INT:
-      return acc + sizeof(int);
+      return acc + db::INT_SIZE;
     case type_t::DOUBLE:
-      return acc + sizeof(double);
+      return acc + db::DOUBLE_SIZE;
     case type_t::CHAR:
-      return acc + sizeof(char);
+      return acc + db::CHAR_SIZE;
     default:
       return acc + 0;
     }
@@ -87,7 +90,19 @@ size_t TupleDesc::offset_of(const size_t &index) const {
 
 size_t TupleDesc::length() const {
   // TODO pa2: implement
-  return this->offset_of(this->size());
+  return std::accumulate(this->types.begin(), this->types.end(), (size_t)0, [](size_t acc, type_t type) {
+    switch (type)
+    {
+    case type_t::INT:
+      return acc + db::INT_SIZE;
+    case type_t::DOUBLE:
+      return acc + db::DOUBLE_SIZE;
+    case type_t::CHAR:
+      return acc + db::CHAR_SIZE;
+    default:
+      return acc + 0;
+    }
+  });
 }
 
 size_t TupleDesc::size() const {

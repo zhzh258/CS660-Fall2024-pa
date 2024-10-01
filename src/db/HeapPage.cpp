@@ -11,14 +11,14 @@ HeapPage::HeapPage(Page &page, const TupleDesc &td) : td(td) {
 
   const size_t P = page.size(); // The length of each page (in byte)
   const size_t T = td.length(); // The length of each tuple (in byte)
-  this->capacity = (CHAR_BIT * P) / (CHAR_BIT * T + 1); // floor((8*p)/(8*t+1)) is the number of tuple to be stored in this page
+  this->capacity = (__CHAR_BIT__ * P) / (__CHAR_BIT__ * T + 1); // floor((8*p)/(8*t+1)) is the number of tuple to be stored in this page
   this->header = page.data();
-  this->data = page.data() + (this->capacity + CHAR_BIT - 1) / CHAR_BIT; // ceil(c/8) is the number of bytes of the header
+  this->data = page.data() + (this->capacity + __CHAR_BIT__ - 1) / __CHAR_BIT__; // ceil(c/8) is the number of bytes of the header
 }
 
 size_t HeapPage::begin() const {
   // TODO pa2: implement
-  return (this->capacity + CHAR_BIT - 1) / CHAR_BIT;
+  return (this->capacity + __CHAR_BIT__ - 1) / __CHAR_BIT__;
 }
 
 size_t HeapPage::end() const {
