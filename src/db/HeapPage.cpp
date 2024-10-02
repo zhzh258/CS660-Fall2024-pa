@@ -58,6 +58,7 @@ bool HeapPage::insertTuple(const Tuple &t) {
       const size_t header_slot_index = slot / 8;
       const size_t header_slot_offset = slot - 8 * header_slot_index;
       header[header_slot_index] |= (1 << (__CHAR_BIT__ - 1 - header_slot_offset)); // mark the bit as '1'
+      break;
     }
   }
   return !isFull;
