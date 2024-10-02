@@ -1,5 +1,6 @@
 #include <cstring>
 #include <db/Tuple.hpp>
+#include <iostream>
 #include <stdexcept>
 
 using namespace db;
@@ -130,9 +131,12 @@ Tuple TupleDesc::deserialize(const uint8_t *data) const {
         break;
       }
       case type_t::CHAR: {
-        std::string field_string = "";
+        std::string field_string;
+        // Note: Skip all '\0' when copying into string, but always move data by 64 bytes
         for (size_t byte = 0; byte < db::CHAR_SIZE; byte ++) { // 64 char a string???? If this is what types.hpp means
-          field_string.push_back(*data);
+          if (*data != '\0') {
+            field_string.push_back(static_cast<char>(*data));
+          }
           data ++;
         }
         fields[i] = field_string;
