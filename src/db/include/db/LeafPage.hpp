@@ -1,6 +1,7 @@
 #pragma once
 
 #include <db/Tuple.hpp>
+#include <memory>
 
 namespace db {
 
@@ -20,7 +21,9 @@ struct LeafPage {
 
   uint16_t capacity;
 
-  LeafPageHeader *header;
+  // LeafPageHeader *header;
+  std::unique_ptr<LeafPageHeader> header; // I am using a unique_ptr instead
+
   uint8_t *data;
 
   /**
