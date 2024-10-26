@@ -13,18 +13,18 @@ IndexPage::IndexPage(Page &page) {
   // keys: size * 4
   // children: (size + 1) * 8
   // size * 4 + (size + 1) * 8 < DEFAULT_PAGE_SIZE
-  capacity = (db::DEFAULT_PAGE_SIZE - sizeof(size_t)) / (sizeof(size_t) + sizeof(int));
+  this->capacity = (db::DEFAULT_PAGE_SIZE - sizeof(size_t)) / (sizeof(size_t) + sizeof(int));
 
   // 2. this->header
-  this->header = std::make_unique<IndexPageHeader>(IndexPageHeader({.size = 0}));
+  this->header = reinterpret_cast<IndexPageHeader *>(page.data());
 
   // 3. this->keys
   // keys[size] will occupy page[0, size * 4)
-  this->keys = reinterpret_cast<int *>(page.data());
+  this->keys = reinterpret_cast<int *>(page.data() + sizeof(IndexPageHeader));
 
   // 4. this->children
   // children[size+1] will occupy page[size * 4, capacity)
-  this->children = reinterpret_cast<size_t *>(page.data() + header->size * sizeof(int));
+  this->children = reinterpret_cast<size_t *>(page.data() + sizeof(IndexPageHeader) + header->size * sizeof(int));
 }
 
 bool IndexPage::insert(int key, size_t child) {

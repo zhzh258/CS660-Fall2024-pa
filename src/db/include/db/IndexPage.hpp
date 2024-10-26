@@ -16,7 +16,7 @@ struct IndexPageHeader {
 struct IndexPage {
   uint16_t capacity;
 
-  std::unique_ptr<IndexPageHeader> header;
+  IndexPageHeader* header;
   int *keys;
   size_t *children;
 

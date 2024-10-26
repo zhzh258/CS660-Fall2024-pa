@@ -71,9 +71,10 @@ void HeapFile::next(Iterator &it) const {
 Iterator HeapFile::begin() const {
   BufferPool &bufferPool = getDatabase().getBufferPool();
   size_t page = 0;
+  PageId pid{name, page};
+  Page &p = bufferPool.getPage(pid);
   while (page < numPages) {
-    PageId pid{name, page};
-    Page &p = bufferPool.getPage(pid);
+
     const HeapPage hp(p, td);
     size_t slot = hp.begin();
     if (slot != hp.end())

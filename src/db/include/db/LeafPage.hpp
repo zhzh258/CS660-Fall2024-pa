@@ -22,7 +22,7 @@ struct LeafPage {
   uint16_t capacity;
 
   // LeafPageHeader *header;
-  std::unique_ptr<LeafPageHeader> header; // I am using a unique_ptr instead
+  LeafPageHeader* header; // I am using a unique_ptr instead
 
   uint8_t *data;
 

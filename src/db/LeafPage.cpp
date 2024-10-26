@@ -11,10 +11,10 @@ LeafPage::LeafPage(Page &page, const TupleDesc &td, size_t key_index) : td(td), 
   this->capacity = db::DEFAULT_PAGE_SIZE / td.length(); // How many tuples can be stored in page[]?  page.size() / td.length()
 
   // this->header
-  this->header = std::make_unique<LeafPageHeader>(LeafPageHeader{.size = 0});
+  this->header = reinterpret_cast<LeafPageHeader *>(page.data()); // The first part is header
 
   // this->data
-  this->data = page.data(); // A reference to page[], where data is stored
+  this->data = page.data() + sizeof(LeafPageHeader); // A reference to the second part, where data is stored
 }
 
 bool LeafPage::insertTuple(const Tuple &t) {
