@@ -50,11 +50,11 @@ bool LeafPage::insertTuple(const Tuple &t) {
     // std::cout << "Append" << std::endl;
     td.serialize(data + insert_at * td.length(), t);
   } else if (replace_flag == true) { // case 2. Replace
-    std::cout << "Replace" << std::endl;
+    // std::cout << "Replace" << std::endl;
     td.serialize(data + insert_at * td.length(), t);
   } else if (replace_flag == false) { // case 3. Shift & Insert
     // NOTE: Can NOT use std::memcpy here due to overlapping memory.
-    std::cout << "Shift & Insert" << std::endl;
+    // std::cout << "Shift & Insert" << std::endl;
     std::memmove(
       data + (insert_at + 1) * td.length(),
       data + insert_at * td.length(),
@@ -65,7 +65,7 @@ bool LeafPage::insertTuple(const Tuple &t) {
 
   /* 4. Update header */
   if (!replace_flag) this->header->size ++;
-  std::cout << "The size after: " << this->header->size << std::endl;
+  // std::cout << "The size after: " << this->header->size << std::endl;
   return this->header->size == this->capacity; // If after size ++ the LeafPage is full, return true.
 }
 

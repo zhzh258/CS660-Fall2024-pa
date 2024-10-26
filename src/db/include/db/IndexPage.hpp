@@ -1,6 +1,7 @@
 #pragma once
 
 #include <db/Tuple.hpp>
+#include <memory>
 
 namespace db {
 
@@ -15,7 +16,7 @@ struct IndexPageHeader {
 struct IndexPage {
   uint16_t capacity;
 
-  IndexPageHeader *header;
+  std::unique_ptr<IndexPageHeader> header;
   int *keys;
   size_t *children;
 
