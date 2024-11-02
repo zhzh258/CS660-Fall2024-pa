@@ -1,0 +1,35 @@
+﻿Zuizz Saeed
+Zhaozhan Huang
+
+
+Programming Assignment 2 Writeup
+
+
+This document explains the design choices and functionality of the BTreeFile, IndexPage, and LeafPage classes, which together form a B-tree-based indexing structure. This implementation ensures efficient insertion, retrieval, and traversal of tuples stored in sorted order. Key operations include dynamic insertion, handling of page splits, and propagating changes upwards to maintain tree balance. Overall, we worked on this project together concurrently, where we would ask questions along the way when one of us got stuck and we were able to make progress in this way. We both ended up completing the same implementations. We spent around a week working on it, which was cramped up towards the end due to the workload of studying for the midterm. Something we found confusing was how the keys work in LeafPage. However, we found that we can use Tuple.get_field(key_index) to find the key value of a given tuple. 
+
+
+Documentation:
+
+
+The IndexPage class manages internal nodes of the B-tree, storing keys and child pointers that guide searches through the tree. The constructor initializes the page by calculating its capacity, mapping keys and child pointers directly from the page’s raw data using reinterpret_cast. This ensures efficient memory access without unnecessary copying. The capacity is derived by dividing the available page space by the combined size of an integer key and a child pointer, ensuring the page uses memory effectively.
+
+
+The insert method handles inserting a new key and child pointer in sorted order. It uses binary search (std::lower_bound) to find the correct insertion point, ensuring logarithmic time complexity. It then shifts the keys and child pointers using memmove to maintain sorted order, taking care to handle overlapping memory regions safely. After insertion, the page's size is updated, and the method returns true if the page has reached its capacity, indicating that a split is needed.
+
+
+The split method divides a full index page into two. The middle key is selected and returned to be propagated up to the parent node. The method ensures both the original and new pages contain roughly half of the keys and child pointers, maintaining balance in the tree. It uses memcpy to move keys and children between pages efficiently. The pointers are then adjusted to reflect the new arrangement, and the sizes of both pages are updated. This design ensures that the B-tree remains balanced and efficient during dynamic insertions and splits.
+
+
+The LeafPage class manages the storage and retrieval of tuples in the leaf nodes of the B-tree. It ensures that tuples are kept in sorted order based on a key field and provides logic for inserting, replacing, shifting, and splitting tuples. The constructor initializes the page by setting the capacity, linking to the page's header, and referencing the area where tuples are stored. The capacity is calculated by dividing the total page size by the size of a tuple, ensuring that memory is utilized efficiently.
+
+
+The insertTuple method handles three scenarios: append, replace, and shift & insert. It starts by extracting the key from the tuple using std::get<int>, ensuring that the key field is an integer. Although a linear search is currently used to find the correct position for insertion, a binary search optimization is marked as a TODO for future improvements. If the key already exists, the existing tuple is replaced. If not, memmove shifts tuples to make space for the new entry, ensuring correctness despite overlapping memory. After insertion, the header size is updated, and the method returns true if the page becomes full.
+
+
+The split method divides a full leaf page into two, keeping half of the tuples in the original page and moving the other half to the new page. It uses memcpy to move the tuples efficiently between the pages. The header of the new page is updated to reference the next leaf, ensuring that leaf pages remain connected. Finally, the first key of the new page is returned to be propagated to the parent index, maintaining the sorted structure of the B-tree. The getTuple method retrieves a tuple from a specific slot by deserializing the raw data, allowing for efficient access. This design ensures that leaf pages are managed effectively, supporting both dynamic insertion and balanced splitting for optimal B-tree performance.
+
+
+The current BTreeFile implementation has several issues that cause it to fail the Empty and Sorted test cases. In the Empty test, the code assumes the tree always contains at least one leaf page. As a result, begin() and end() attempt to access non-existent pages when the tree is empty, leading to failure. In the Sorted test, the insertion logic doesn’t properly handle splits. When a leaf page becomes full, the middle key should be passed to the parent, but the implementation lacks a way to track parent pages during traversal, making split propagation impossible. Although the code hints at using a stack or queue for this purpose, it is not implemented. Additionally, the use of a hardcoded placeholder value (123456789) for new page IDs leads to incorrect references and breaks the tree structure.
+
+
+The core logic starts by traversing from the root index page to the appropriate leaf page using the tuple's key to decide which child to follow, ensuring the tuple lands in the correct leaf. The insertTuple method inserts the tuple and triggers a split if the leaf becomes full, aiming to move half the tuples to a new page and pass the middle key to the parent. However, the code does not manage splits beyond the leaf page, which prevents the tree from staying balanced. The next() method aims to move to the next tuple or jump to the next leaf page if the current one is exhausted, but incomplete logic for resetting the slot and switching pages causes traversal issues. Similarly, begin() and end() try to find the leftmost and rightmost leaf pages, but the code assumes leaf pages always exist, which leads to failure when the tree is empty. These issues stem from incorrect assumptions, missing parent tracking during splits, hardcoded page IDs, and incomplete traversal logic, preventing the tree from maintaining a correct structure during insertion and traversal.

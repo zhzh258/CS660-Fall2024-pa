@@ -11,6 +11,7 @@ BTreeFile::BTreeFile(const std::string &name, const TupleDesc &td, size_t key_in
     : DbFile(name, td), key_index(key_index) {}
 
 void BTreeFile::insertTuple(const Tuple &t) {
+  return;
   const int tk = std::get<int>(t.get_field(key_index));
   /* Find the correct leafPage to insert */
   BufferPool &bufferPool = getDatabase().getBufferPool();
