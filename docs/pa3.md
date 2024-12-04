@@ -14,7 +14,7 @@ specified fields.
 
 A `FilterPredicate` describes a comparison between two numeric fields. The supported operators are `EQUALS`, `NOT_EQUALS`,
 `GREATER_THAN`, `LESS_THAN`, `LESS_THAN_OR_EQ`, and `GREATER_THAN_OR_EQ`.
-
+P
 ## Filter
 
 The `filter` operation is used to filter out tuples that do not satisfy a given a collection of `FilterPredicate`

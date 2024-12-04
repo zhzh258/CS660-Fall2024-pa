@@ -1,6 +1,7 @@
 #pragma once
 
 #include <db/Query.hpp>
+#include <vector>
 
 namespace db {
 
@@ -9,6 +10,12 @@ namespace db {
  */
 class ColumnStats {
   // TODO pa4: add private members
+private:
+  unsigned m_buckets;             // Number of buckets
+  int m_min;                      // Minimum value
+  int m_max;                      // Maximum value
+  size_t m_total_values;          // Total number of values added
+  std::vector<int> m_histogram;   // Histogram array
 
 public:
   /**
@@ -27,14 +34,12 @@ public:
    * @param max The maximum integer value that this instance will process
    */
   ColumnStats(unsigned buckets, int min, int max);
-
   /**
    * Add a value to the histogram.
    * @param v Value to add to the histogram
    */
   void addValue(int v);
-
-  /**
+/**
    * Estimate the selectivity of a particular predicate and operand on this table.
    *
    * For example, if "op" is "GT" and "v" is 5,
@@ -46,4 +51,5 @@ public:
    */
   size_t estimateCardinality(PredicateOp op, int v) const;
 };
+
 } // namespace db
